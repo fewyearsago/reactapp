@@ -1,23 +1,30 @@
 import logo from './logo.svg';
+import React from 'react';
+import Pizzablock from './components/pizza-block';
+import Header from './components/header';
 import './App.css';
 
 function App() {
+  const [items, setItems] = React.useState([]);
+
+  React.useEffect(() => {
+    fetch('https://63853e02875ca3273d393b51.mockapi.io/items').then((res) =>
+      res.json().then((arr) => {
+        setItems(arr);
+      }),
+    );
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <Header></Header>
+      <div className="wrapper">
+        {items.map(function (elem) {
+          return (
+            <Pizzablock name={elem.name} price={elem.price} url={elem.url} />
+          );
+        })}
+      </div>
     </div>
   );
 }

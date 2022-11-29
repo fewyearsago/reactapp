@@ -1,38 +1,61 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+body {
+  background-color: #fbab7e;
+  background-image: linear-gradient(62deg, #fbab7e 0%, #f7ce68 100%);
+}
+.container {
+  max-width: 1220px;
+  margin: 0 auto;
+  padding: 0 10px;
+  background-color: #fff;
+  height: 100vh;
+  padding-top: 200px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.wrapper {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  gap: 50px;
 }
 
-.App-link {
-  color: #61dafb;
+a {
+  text-decoration: none;
+  font-size: 50px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.header__inner {
+  display: flex;
+  justify-content: space-between;
+}
+
+.menu {
+  display: flex;
+}
+
+span {
+  font-family: 'VT323', monospace;
+  color: #000;
+}
+
+.pizza-items {
+  width: 100%;
+  border-radius: 50%;
+}
+
+.logo__img {
+  width: 50px;
+}
+
+.box {
+  text-align: center;
+  max-width: 500px;
+  height: 500px;
+  padding: 20px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.box h2 {
+  padding-top: 20px;
 }
