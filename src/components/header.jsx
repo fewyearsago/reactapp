@@ -1,21 +1,21 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function Header() {
   return (
     <header>
       <div className="header__inner">
-        <a href="#" className="logo__link">
+        <Link to="/" className="logo__link">
           <img
             src="https://www.nicepng.com/png/full/948-9484754_crave-pizza-gif-pizza-pixel-art.png"
             className="logo__img"
           />
           <span>PIXELPIZZA</span>
-        </a>
+        </Link>
         <ul className="menu">
-          <li className="menu__item"></li>
-          <li className="menu__item"></li>
-          <li className="menu__item"></li>
-          <li className="menu__item"></li>
+          <Link to="/cart">
+            <li className="menu__item">КОРЗИНА</li>
+          </Link>
         </ul>
       </div>
     </header>
