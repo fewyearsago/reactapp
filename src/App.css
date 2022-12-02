@@ -19,8 +19,23 @@ body {
   align-items: center;
   gap: 30px;
   column-gap: 80px;
-  border: 2px solid rgb(235, 235, 235);
-  border-radius: 20px;
+  padding: 50px;
+}
+
+b {
+  background-color: #fe5f1e;
+  border-radius: 30px;
+  color: #fff;
+  display: inline-block;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  height: 22px;
+  left: 3px;
+  line-height: 22px;
+  position: relative;
+  top: -1px;
+  width: 22px;
 }
 
 a {
@@ -28,12 +43,34 @@ a {
   font-size: 50px;
 }
 
+.menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px 50px 0;
+  color: black;
+}
+
+li {
+  background-color: #f9f9f9;
+  cursor: pointer;
+  border-radius: 30px;
+  padding: 20px;
+}
+
+.menu__item-focused {
+  background-color: #000;
+  cursor: pointer;
+  border-radius: 30px;
+  padding: 20px;
+  color: #fff;
+}
+
 .header__inner {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px;
-  padding-bottom: 70px;
 }
 
 .menu {
@@ -42,7 +79,7 @@ a {
   font-size: 20px;
 }
 
-.menu__item {
+.cart-item {
   padding: 10px;
   background-color: black;
   border-radius: 40px;
@@ -54,6 +91,13 @@ a {
 span {
   font-family: 'VT323', monospace;
   color: #000;
+}
+
+.box-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
 }
 
 .pizza-items {
@@ -75,20 +119,19 @@ span {
 
 .box h2 {
   padding-top: 20px;
-}
-
-.box p {
-  margin-bottom: 50px;
+  font-weight: 700;
+  font-size: 20px;
 }
 
 .btn {
-  font-size: 20px;
-  padding: 20px;
-  color: #fff;
-  background-color: tomato;
+  font-size: 15px;
+  color: tomato;
+  background-color: #fff;
+  border: 2px solid tomato;
   border-radius: 30px;
   cursor: pointer;
   user-select: none;
+  padding: 12px 20px;
 }
 
 .notfound {
