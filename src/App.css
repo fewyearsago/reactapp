@@ -22,6 +22,11 @@ body {
   padding: 50px;
 }
 
+span {
+  font-size: 50px;
+  margin-left: 10px;
+}
+
 b {
   background-color: #fe5f1e;
   border-radius: 30px;
@@ -36,6 +41,11 @@ b {
   position: relative;
   top: -1px;
   width: 22px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
 }
 
 a {
@@ -76,6 +86,7 @@ li {
 
 .menu {
   display: flex;
+  flex-wrap: wrap;
   font-family: 'Montserrat', sans-serif;
   font-size: 20px;
 }
@@ -140,4 +151,26 @@ span {
   text-align: center;
   padding: 50px 0 90px;
   line-height: 70px;
+}
+
+@media (max-width: 1020px) {
+  .menu {
+    width: 900px;
+    padding: 50px 10px;
+  }
+  .categories {
+    overflow: auto;
+    position: relative;
+    z-index: 100;
+    width: 100%;
+  }
+}
+
+@media (max-width: 400px) {
+  .header__inner {
+    flex-direction: column;
+  }
+  .cart {
+    margin-top: 20px;
+  }
 }
