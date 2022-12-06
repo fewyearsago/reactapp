@@ -54,12 +54,18 @@ a {
   font-size: 50px;
 }
 
-.menu {
+.sort__label {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 50px 50px 0;
+  column-gap: 5px;
+}
+
+.menu {
   color: black;
+}
+
+.menu li + li {
+  margin-left: 20px;
 }
 
 li {
@@ -89,7 +95,7 @@ li {
   display: flex;
   flex-wrap: wrap;
   font-family: 'Montserrat', sans-serif;
-  font-size: 20px;
+  font-size: 16px;
 }
 
 .cart-item {
@@ -104,6 +110,19 @@ li {
 span {
   font-family: 'VT323', monospace;
   color: #000;
+}
+
+.categories {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px 50px 0 50px;
+}
+
+.sort__list {
+  font-size: 16px;
+  color: #fe5f1e;
+  border-bottom: 1px dashed #fe5f1e;
 }
 
 .box-item {
@@ -161,12 +180,27 @@ span {
   }
 }
 
+@media (max-width: 1170px) {
+  .categories {
+    flex-direction: column;
+  }
+  .sort {
+    margin-top: 20px;
+  }
+}
+
 @media (max-width: 1020px) {
   .menu {
-    width: 900px;
-    padding: 50px 10px;
+    width: 780px;
+    margin: 0 auto;
+    padding: 20px 0 0;
   }
+
   .categories {
+    padding: 20px;
+  }
+
+  .categories__scroll {
     overflow: auto;
     position: relative;
     z-index: 100;
