@@ -142,7 +142,7 @@ span {
   color: #000;
 }
 
-.categories {
+.header__main {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -152,6 +152,7 @@ span {
 .sort__list {
   font-size: 16px;
   color: #fe5f1e;
+  cursor: pointer;
   border-bottom: 1px dashed #fe5f1e;
 }
 
@@ -217,6 +218,32 @@ span {
   line-height: 40px;
   padding-top: 130px;
   font-family: 'Montserrat', sans-serif;
+}
+
+.sort {
+  position: relative;
+}
+
+.sort__popup {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgb(0 0 0 / 9%);
+  margin-top: 15px;
+  padding: 10px 0;
+  position: absolute;
+  right: 0;
+}
+
+.sort__popup li {
+  border-radius: 0;
+  background-color: #fff;
+  width: 150px;
+}
+
+.sort__popup ul li.active {
+  color: #fe5f1e;
+  background: rgba(254, 95, 30, 0.05);
+  font-weight: 700;
 }
 
 .notfound__text {
