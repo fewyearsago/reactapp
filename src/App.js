@@ -4,11 +4,13 @@ import { Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import NotFound from './pages/NotFound';
 import Cart from './pages/Cart';
+import ReactPaginate from 'react-paginate';
 import './App.css';
 
 function App() {
   const [items, setItems] = React.useState([]);
   const [isLoader, setLoader] = React.useState(true);
+  const [searchvalue, setValue] = React.useState('');
 
   React.useEffect(() => {
     fetch('https://63853e02875ca3273d393b51.mockapi.io/items').then((res) =>
@@ -21,9 +23,9 @@ function App() {
 
   return (
     <div className="container">
-      <Header></Header>
+      <Header searchvalue={searchvalue} setValue={setValue}></Header>
       <Routes>
-        <Route path="" element={<Home />}></Route>
+        <Route path="" element={<Home searchvalue={searchvalue} setValue={setValue} />}></Route>
         <Route path="/cart" element={<Cart />}></Route>
         <Route path="*" element={<NotFound />}></Route>
       </Routes>

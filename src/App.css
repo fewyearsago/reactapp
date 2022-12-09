@@ -3,6 +3,7 @@
 body {
   background-color: #ffdf8c;
 }
+
 .container {
   max-width: 1220px;
   border-radius: 10px;
@@ -22,7 +23,7 @@ body {
   padding: 50px;
 }
 
-span {
+.logo__title {
   font-size: 50px;
   margin-left: 10px;
 }
@@ -46,12 +47,10 @@ b {
 .logo {
   display: flex;
   align-items: center;
-  margin: 15px 0 0 15px;
 }
 
 a {
   text-decoration: none;
-  font-size: 50px;
 }
 
 .sort__label {
@@ -88,7 +87,38 @@ li {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
+  padding: 20px;
+}
+
+.input__el {
+  margin-right: auto;
+  margin-left: 40px;
+  position: relative;
+}
+
+.input__el svg {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  opacity: 0.3;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.input__el svg:hover {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  opacity: 1;
+}
+
+.header__input {
+  outline: none;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 12px 20px;
+  width: 300px;
+  border-radius: 10px;
+  font-size: 16px;
 }
 
 .menu {
@@ -166,11 +196,80 @@ span {
   padding: 12px 20px;
 }
 
+.btn:hover {
+  background-color: tomato;
+  color: #fff;
+}
+
+.btn:hover b {
+  background-color: #fff;
+  color: tomato;
+}
+
+.btn:active {
+  transform: translateY(-3px);
+}
+
 .notfound {
-  font-size: 60px;
+  font-size: 33px;
   text-align: center;
   padding: 50px 0 90px;
-  line-height: 70px;
+  line-height: 40px;
+  padding-top: 130px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.notfound__text {
+  margin-top: 10px;
+  font-size: 19px;
+  opacity: 0.6;
+}
+
+.notfound__img {
+  width: 30%;
+  margin-top: 20px;
+}
+
+.pagination {
+  width: 250px;
+  padding: 20px;
+}
+
+.pagination ul {
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+}
+
+.pagination a {
+  display: inline-block;
+}
+
+.pagination li {
+  text-align: center;
+  line-height: 40px;
+  background-color: #fff;
+  border: 1px solid #fe5f1e;
+  color: #fe5f1e;
+  width: 40px;
+  padding: 0;
+  margin-right: 10px;
+  height: 40px;
+}
+
+.pagination li a {
+  width: 40px;
+  height: 40px;
+}
+
+.pagination li:hover {
+  background-color: #fe5f1e;
+  color: #fff;
+}
+
+ul .selected {
+  background-color: #fe5f1e;
+  color: #fff;
 }
 
 @media (max-width: 1300px) {
