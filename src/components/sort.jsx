@@ -7,11 +7,10 @@ function Sort({ value, onChangeSort }) {
     { name: 'цене', sortProperty: 'price' },
     { name: 'алфавиту', sortProperty: 'title' },
   ];
-  const sortName = list[value].name;
-  const onClickListItem = (index) => {
+  function onClickListItem(index) {
     onChangeSort(index);
     setOpen(false);
-  };
+  }
   return (
     <div className="sort">
       <div className="sort__label">
@@ -27,7 +26,7 @@ function Sort({ value, onChangeSort }) {
         </svg>
         <h6>Сортировать по:</h6>
         <span onClick={() => setOpen(!open)} className="sort__list">
-          {sortName}
+          {value.name}
         </span>
       </div>
       {open && (
@@ -35,8 +34,8 @@ function Sort({ value, onChangeSort }) {
           <ul>
             {list.map((obj, index) => (
               <li
-                onClick={() => onClickListItem(obj.sortProperty)}
-                className={value === index ? 'active' : ''}
+                onClick={() => onClickListItem(obj)}
+                className={value.sortProperty === obj.sortProperty ? 'active' : ''}
                 key={index}>
                 {obj.name}
               </li>
