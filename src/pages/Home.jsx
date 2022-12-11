@@ -10,35 +10,24 @@ function Home({ searchvalue, setValue }) {
   const [items, setItems] = React.useState([]);
   const [isLoader, setLoader] = React.useState(true);
   const [currentPage, setCurrentPage] = React.useState(1);
+  const search = searchvalue ? `&search=${searchvalue}` : '';
 
   React.useEffect(() => {
+    setLoader(true);
     fetch(
-      `https://63853e02875ca3273d393b51.mockapi.io/items?page=${currentPage}&limit=3&`,
+      `https://63853e02875ca3273d393b51.mockapi.io/items?page=${currentPage}${search}&limit=3&`,
     ).then((res) =>
       res.json().then((arr) => {
         setItems(arr);
         setLoader(false);
       }),
     );
-  }, [currentPage]);
+  }, [currentPage, searchvalue]);
 
-  const pizzas = items
-    .filter((elem) => {
-      if (elem.title.toLowerCase().includes(searchvalue.toLowerCase())) {
-        return true;
-      }
-      return false;
-    })
-    .map((elem) => (
-      <Pizzablock
-        title={elem.title}
-        price={elem.price}
-        imageUrl={elem.imageUrl}
-      />
-    ));
-  const skeletons = [...new Array(6)].map((_, index) => (
-    <Skeleton key={index} />
+  const pizzas = items.map((elem) => (
+    <Pizzablock title={elem.title} price={elem.price} imageUrl={elem.imageUrl} />
   ));
+  const skeletons = [...new Array(6)].map((_, index) => <Skeleton key={index} />);
 
   return (
     <>

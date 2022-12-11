@@ -8,18 +8,7 @@ import ReactPaginate from 'react-paginate';
 import './App.css';
 
 function App() {
-  const [items, setItems] = React.useState([]);
-  const [isLoader, setLoader] = React.useState(true);
   const [searchvalue, setValue] = React.useState('');
-
-  React.useEffect(() => {
-    fetch('https://63853e02875ca3273d393b51.mockapi.io/items').then((res) =>
-      res.json().then((arr) => {
-        setItems(arr);
-        setLoader(false);
-      }),
-    );
-  }, []);
 
   return (
     <div className="container">
