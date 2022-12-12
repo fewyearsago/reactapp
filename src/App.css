@@ -346,6 +346,12 @@ ul .selected {
   }
 }
 
+@media (max-width: 550px) {
+  .header__main {
+    flex-direction: column;
+  }
+}
+
 @media (max-width: 400px) {
   .header__inner {
     flex-direction: column;
