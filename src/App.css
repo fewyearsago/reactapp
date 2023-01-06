@@ -28,6 +28,12 @@ body {
   margin-left: 10px;
 }
 
+.emptyPizza {
+  font-family: 'Montserrat', sans-serif;
+  padding: 24px;
+  font-size: 33px;
+}
+
 b {
   background-color: #fe5f1e;
   border-radius: 30px;

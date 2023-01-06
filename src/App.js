@@ -14,7 +14,11 @@ function App() {
     <div className="container">
       <Header searchvalue={searchvalue} setValue={setValue}></Header>
       <Routes>
-        <Route path="" element={<Home searchvalue={searchvalue} setValue={setValue} />}></Route>
+        <Route
+          path=""
+          element={
+            <Home searchvalue={searchvalue} setValue={setValue} />
+          }></Route>
         <Route path="/cart" element={<Cart />}></Route>
         <Route path="*" element={<NotFound />}></Route>
       </Routes>
