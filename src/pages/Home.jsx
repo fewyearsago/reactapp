@@ -32,15 +32,33 @@ function Home() {
     );
   }, [currentPage, searchvalue, categoryId, sortType]);
 
+<<<<<<< HEAD
   const pizzas = items.map((elem, id) => (
     <Pizzablock key={id} title={elem.title} price={elem.price} imageUrl={elem.imageUrl} />
+=======
+  const pizzas = !items[0] ? (
+    <p className="emptyPizza">Не найдено :(</p>
+  ) : (
+    items.map((elem) => (
+      <Pizzablock
+        title={elem.title}
+        price={elem.price}
+        imageUrl={elem.imageUrl}
+      />
+    ))
+  );
+  const skeletons = [...new Array(6)].map((_, index) => (
+    <Skeleton key={index} />
+>>>>>>> 2430ce1f50ba0cc5c76d9237c0e886d11d9f610e
   ));
-  const skeletons = [...new Array(6)].map((_, index) => <Skeleton key={index} />);
 
   return (
     <>
       <div className="header__main">
-        <Categories value={categoryId} onClickCategory={(id) => setCategoryId(id)} />
+        <Categories
+          value={categoryId}
+          onClickCategory={(id) => setCategoryId(id)}
+        />
         <Sort value={sortType} onChangeSort={(id) => setSortType(id)} />
       </div>
       <div className="wrapper">{isLoader ? skeletons : pizzas}</div>

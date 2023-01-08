@@ -28,6 +28,12 @@ body {
   margin-left: 10px;
 }
 
+.emptyPizza {
+  font-family: 'Montserrat', sans-serif;
+  padding: 24px;
+  font-size: 33px;
+}
+
 b {
   background-color: #fe5f1e;
   border-radius: 30px;
@@ -334,11 +340,49 @@ ul .selected {
   }
 }
 
+@media (max-width: 745px) {
+  .header__inner {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+  .input__el {
+    margin: 0 auto;
+    width: 350px;
+  }
+}
+
+@media (max-width: 550px) {
+  .header__main {
+    flex-direction: column;
+  }
+}
+
 @media (max-width: 400px) {
   .header__inner {
     flex-direction: column;
   }
   .cart {
     margin-top: 20px;
+  }
+  .input__el {
+    width: 200px;
+  }
+  .header__input {
+    width: 150px;
+  }
+
+  .pagination {
+    padding: 0;
+    width: 100%;
+  }
+
+  .header__main {
+    flex-wrap: wrap;
+  }
+  .pagination ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
   }
 }
