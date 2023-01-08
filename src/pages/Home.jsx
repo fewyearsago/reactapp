@@ -5,8 +5,10 @@ import Pagination from '../components/pagination';
 import Categories from '../components/categories';
 import Sort from '../components/sort';
 import '../App.css';
+import { SearchContext } from '../App';
 
-function Home({ searchvalue, setValue, value }) {
+function Home() {
+  const { searchvalue } = React.useContext(SearchContext);
   const [items, setItems] = React.useState([]);
   const [isLoader, setLoader] = React.useState(true);
   const [categoryId, setCategoryId] = React.useState(0);
@@ -30,8 +32,8 @@ function Home({ searchvalue, setValue, value }) {
     );
   }, [currentPage, searchvalue, categoryId, sortType]);
 
-  const pizzas = items.map((elem) => (
-    <Pizzablock title={elem.title} price={elem.price} imageUrl={elem.imageUrl} />
+  const pizzas = items.map((elem, id) => (
+    <Pizzablock key={id} title={elem.title} price={elem.price} imageUrl={elem.imageUrl} />
   ));
   const skeletons = [...new Array(6)].map((_, index) => <Skeleton key={index} />);
 

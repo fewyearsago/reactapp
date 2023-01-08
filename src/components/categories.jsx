@@ -6,7 +6,10 @@ function Categories({ value, onClickCategory }) {
     <div className="categories__scroll">
       <ul className="menu">
         {arr.map((categoryName, id) => (
-          <li onClick={() => onClickCategory(id)} className={value === id ? 'menu__item' : ''}>
+          <li
+            key={id}
+            onClick={() => onClickCategory(id)}
+            className={value === id ? 'menu__item' : ''}>
             {categoryName}
           </li>
         ))}
