@@ -32,10 +32,6 @@ function Home() {
     );
   }, [currentPage, searchvalue, categoryId, sortType]);
 
-<<<<<<< HEAD
-  const pizzas = items.map((elem, id) => (
-    <Pizzablock key={id} title={elem.title} price={elem.price} imageUrl={elem.imageUrl} />
-=======
   const pizzas = !items[0] ? (
     <p className="emptyPizza">Не найдено :(</p>
   ) : (
